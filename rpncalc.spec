@@ -10,7 +10,6 @@ BuildRequires: bison
 BuildRequires: flex
 BuildRequires: libncurses-devel
 BuildRequires: libreadline-devel
-BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 %description
 rpncalc is a calculator similar to dc(1), but it uses the readline library
