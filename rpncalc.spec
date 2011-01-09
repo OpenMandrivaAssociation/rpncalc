@@ -1,9 +1,11 @@
 Name: rpncalc
-Version: 1.35
-Release: %mkrel 6
+Version: 1.36.8
+Release: %mkrel 1
 Summary: An RPN calculator similar to the HP28S
 URL: http://packages.debian.org/unstable/source/rpncalc
-Source: %{name}_%{version}.tar.bz2
+Source: %{name}_%{version}.tar.gz
+Patch0: %{name}-1.36.8-make-install.patch
+Patch1: %{name}-1.36.8-bison.patch
 Group: Sciences/Mathematics
 License: GPL
 BuildRequires: bison
@@ -17,26 +19,24 @@ rpncalc is a calculator similar to dc(1), but it uses the readline library
 and shows the stack visually.
 
 %prep
-%setup -q
+%setup -q -n %{name}
+%patch0 -p1 -b .make-install
+%patch1 -p1 -b .bison
 
 %build
-%configure
-make
+%make
 
 %install
-mkdir -p %{buildroot}%{_bindir}
-mkdir -p %{buildroot}%{_mandir}/man1
-mkdir -p %{buildroot}%{_libdir}
-
-install -s -m 755 rpncalc %{buildroot}%{_bindir}/rpncalc
-install -m 644 rpncalc.1 %{buildroot}%{_mandir}/man1/rpncalc.1
+%make install DESTDIR=%{buildroot}
+%find_lang %{name}
 
 %clean
 rm -rf %{buildroot}
 
-%files
+%files -f %{name}.lang
 %defattr(-,root,root)
 %doc README COPYING debian/changelog
 %{_bindir}/rpncalc
 %{_mandir}/man1/rpncalc.1*
-
+%lang(de) %{_mandir}/de/man1/rpncalc.1.gz
+%lang(es) %{_mandir}/es/man1/rpncalc.1.gz
