@@ -12,6 +12,7 @@ BuildRequires: bison
 BuildRequires: flex
 BuildRequires: libncurses-devel
 BuildRequires: libreadline-devel
+BuildRequires: ed
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 
 %description
