@@ -39,5 +39,5 @@ rm -rf %{buildroot}
 %doc README COPYING debian/changelog
 %{_bindir}/rpncalc
 %{_mandir}/man1/rpncalc.1*
-%lang(de) %{_mandir}/de/man1/rpncalc.1.gz
-%lang(es) %{_mandir}/es/man1/rpncalc.1.gz
+%lang(de) %{_mandir}/de/man1/rpncalc.1*
+%lang(es) %{_mandir}/es/man1/rpncalc.1*
