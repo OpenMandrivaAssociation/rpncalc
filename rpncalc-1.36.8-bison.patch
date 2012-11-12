@@ -1,0 +1,11 @@
+diff -p -up rpncalc/Makefile.orig rpncalc/Makefile
+--- rpncalc/Makefile.orig	2011-01-09 17:11:33.000000000 -0200
++++ rpncalc/Makefile	2011-01-09 17:14:14.000000000 -0200
+@@ -4,6 +4,7 @@
+ 
+ RM      = rm -f
+ CC      = gcc
++YACC	= bison -y
+ 
+ CFLAGS=-g
+ ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))

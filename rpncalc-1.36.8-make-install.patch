@@ -1,0 +1,32 @@
+diff -p -up rpncalc/Makefile.orig rpncalc/Makefile
+--- rpncalc/Makefile.orig	2011-01-09 16:59:12.000000000 -0200
++++ rpncalc/Makefile	2011-01-09 16:59:43.000000000 -0200
+@@ -80,20 +80,20 @@ clean:
+ 	$(RM) $(BIN)
+ 
+ install:	$(MAN) $(BIN)
+-	install -d -g root -o root -m 755 $(BINDIR)
+-	install    -g root -o root -m 755 $(BIN) $(BINDIR)
+-	install -d -g root -o root -m 755 $(MANDIR1)
+-	install    -g root -o root -m 644 $(MAN) $(MANDIR1)
++	install -d -m 755 $(BINDIR)
++	install    -m 755 $(BIN) $(BINDIR)
++	install -d -m 755 $(MANDIR1)
++	install    -m 644 $(MAN) $(MANDIR1)
+ 
+ 	for lang in `echo $(MAN_LINGUAS)|tr ' ' '\n'|grep -v en`; do \
+ 	  mandir=$(MANDIR)/$$lang/man1; \
+-	  install -d -g root -o root -m 755 $$mandir; \
+-	  install    -g root -o root -m 644 rpncalc.$$lang.1 $$mandir/rpncalc.1; \
++	  install -d -m 755 $$mandir; \
++	  install    -m 644 rpncalc.$$lang.1 $$mandir/rpncalc.1; \
+ 	done
+ 	for lang in `echo $(LINGUAS)|tr ' ' '\n'|grep -v en`; do \
+ 	  localedir=$(LOCALEDIR)/$$lang/LC_MESSAGES; \
+-	  install -d -g root -o root -m 755 $$localedir; \
+-	  install    -g root -o root -m 644 po/$$lang.gmo $$localedir/rpncalc.mo; \
++	  install -d -m 755 $$localedir; \
++	  install    -m 644 po/$$lang.gmo $$localedir/rpncalc.mo; \
+ 	done
+ 
+ po:
