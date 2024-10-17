@@ -2,7 +2,7 @@ Name: rpncalc
 Version: 1.36.8
 Release: 3
 Summary: An RPN calculator similar to the HP28S
-URL: http://packages.debian.org/unstable/source/rpncalc
+URL: https://packages.debian.org/unstable/source/rpncalc
 Source: %{name}_%{version}.tar.gz
 Patch0: %{name}-1.36.8-make-install.patch
 Patch1: %{name}-1.36.8-bison.patch
