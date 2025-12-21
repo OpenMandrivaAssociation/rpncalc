@@ -8,6 +8,7 @@ Patch0: %{name}-1.36.8-make-install.patch
 Patch1: %{name}-1.36.8-bison.patch
 Group: Sciences/Mathematics
 License: GPL
+BuildRequires:	make
 BuildRequires: bison
 BuildRequires: flex
 BuildRequires: ncurses-devel
